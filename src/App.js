@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './components/spinner/LoadingSpinner';
 import LoadingSpinner from './components/spinner/LoadingSpinner';
 import ShoppingList from "./components/ShippingList/ShippingList";
+import Search from "./components/search/Search";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     console.log(shipmentsData)
     return (
         <div className="App">
+            <Search/>
             {isLoading ? (
                 <LoadingSpinner />
             ) : (

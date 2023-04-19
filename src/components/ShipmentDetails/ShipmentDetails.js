@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import "./ShipmentsDetails.css"
 
 function ShipmentDetails({ selectedShipment }) {
 
@@ -42,10 +43,11 @@ function ShipmentDetails({ selectedShipment }) {
         <div className="shipment-details">
             <div className="shipment-details-shipment-container">
                 <h1>{selectedShipment.name}</h1>
-                <p>{selectedShipment.email}</p>
-                <p>{selectedShipment.id}</p>
+                <p style={{marginBottom: '35px'}}>{selectedShipment.email}</p>
+                <p>CARGO BOXES</p>
                 <input type="text" value={boxes} onChange={handleBoxUnitsChange}/>
-                <p>number of reuired cargo bays: {calculation(boxes)}</p>
+                <p style={{fontSize: '32px'}}>Number of reuired cargo bays:</p>
+                <p style={{color: '#fff', fontSize: '32px' }}>{calculation(boxes)}</p>
             </div>
         </div>
     );

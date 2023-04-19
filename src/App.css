@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  margin-left: 50px;
+  margin: 50px;
 }
 
 ul {
@@ -17,3 +17,18 @@ li {
 li:hover {
   text-decoration: underline;
 }
+
+h1 {
+  font-family: Roboto, sans-serif;
+  color: #f1f1f1;
+  font-size: 64px;
+  font-weight: 400;
+  margin-top: 45px;
+  margin-bottom: -15px;
+}
+
+p {
+  font-family: Roboto, sans-serif;
+  color: #f1f1f1;
+}
+

@@ -1,16 +1,38 @@
 .shipping-list-container {
     display: flex;
+    background-color: #1B1D22;
 }
 
 .shipping-list {
-    width: 30%;
-    border: 1px solid #ccc;
+    width: 15%;
     padding: 10px;
+    /*border: 1px solid #fff;*/
 }
 
 .shipment-details {
-    width: 70%;
-    border: 1px solid #ccc;
+    width: 85%;
+    border: 1px solid #1B1D22;
     padding: 10px;
     margin-left: 10px;
+    height: 1000px;
+    overflow: auto;
 }
+
+.shipping-list input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+li, p {
+    color: #979797;
+    font-family: Lato, regular, serif;
+}
+
+h3 {
+    font-size: 20px;
+    color: #979797;
+    line-height: 38px;
+}
+
