@@ -1,0 +1,16 @@
+.shipping-list-container {
+    display: flex;
+}
+
+.shipping-list {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.shipment-details {
+    width: 70%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-left: 10px;
+}

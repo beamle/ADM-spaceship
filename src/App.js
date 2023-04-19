@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import './components/spinner/LoadingSpinner';
+import LoadingSpinner from './components/spinner/LoadingSpinner';
+import ShoppingList from "./components/ShippingList/ShippingList";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [shipmentsData, setShipmentsData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('https://bitbucket.org/hpstore/spacex-cargo-planner/raw/204125d74487b1423bbf0453f4dcb53a2161353b/shipments.json')
+            .then((response) => response.json())
+            .then((data) => {
+                setShipmentsData(data);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                console.log(error)
+            });
+    }, []);
+    console.log(shipmentsData)
+    return (
+        <div className="App">
+            {isLoading ? (
+                <LoadingSpinner />
+            ) : (
+                <div>
+                    <ShoppingList shipmentsData={shipmentsData}/>
+                </div>
+            )}
+        </div>
+    );
 }
 
 export default App;
