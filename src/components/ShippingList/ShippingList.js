@@ -13,10 +13,13 @@ function ShippingList({shipmentsData}) {
     });
 
 
+
     return (
         <div className="shipping-list-container">
-            <div className="shipping-list">
+            <div className='shipping-list-search'>
                 <input type="text" placeholder="Search.." value={search} onChange={(e) => setSearch(e.target.value)}/>
+            </div>
+            <div className="shipping-list">
                 <h3>Shipping List</h3>
                 {filteredShipments.map((shipment) => (
                     <ul key={shipment.id}>

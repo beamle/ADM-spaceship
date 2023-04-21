@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './components/spinner/LoadingSpinner';
 import LoadingSpinner from './components/spinner/LoadingSpinner';
 import ShoppingList from "./components/ShippingList/ShippingList";
-import Search from "./components/search/Search";
+import logo from './logo.svg';
 
 
 function App() {
@@ -24,6 +24,9 @@ function App() {
     console.log(shipmentsData)
     return (
         <div className="App">
+            <div className="logo-container">
+                <img src={logo} alt="logo" />
+            </div>
             {/*<Search/>*/}
             {isLoading ? (
                 <LoadingSpinner />

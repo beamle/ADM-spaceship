@@ -3,6 +3,18 @@
   margin: 50px;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.logo-container img {
+  height: 50px;
+  width: 50px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
