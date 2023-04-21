@@ -8,10 +8,8 @@ function ShippingList({shipmentsData}) {
     const [search, setSearch] = useState('');
 
     const filteredShipments = shipmentsData.filter((shipment) => {
-        const shipmentName = shipment.name;
-        return shipmentName.includes(search);
+        return (shipment.name).toLowerCase().includes(search.toLowerCase());
     });
-
 
 
     return (
