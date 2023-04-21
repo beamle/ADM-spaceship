@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { Link } from "react-router-dom";
 import ShipmentDetails from "../ShipmentDetails/ShipmentDetails";
 import "./ShippingList.css";
 
@@ -12,11 +13,13 @@ function ShippingList({shipmentsData}) {
     });
 
     const shippingList = filteredShipments.map(shipment => (
+            <Link className="link" to={`/shipments/${shipment.id}`}>
                 <p key={shipment.id}
                    onClick={() => setSelectedShipment(shipment)}
-                   tabIndex={0}> {/*Allows to change background color with focus pseudo-element*/}
+                   tabIndex={0}> {/*Allows to change background color with :focus pseudo-element*/}
                     {(shipment.name.toLowerCase()).includes(search.toLowerCase()) && shipment.name}
                 </p>
+            </Link>
         ))
 
 

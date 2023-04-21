@@ -4,6 +4,7 @@ import './components/spinner/LoadingSpinner';
 import LoadingSpinner from './components/spinner/LoadingSpinner';
 import ShoppingList from "./components/ShippingList/ShippingList";
 import logo from './logo.svg';
+import {BrowserRouter, Link} from 'react-router-dom';
 
 
 function App() {
@@ -23,19 +24,20 @@ function App() {
     }, []);
     console.log(shipmentsData)
     return (
-        <div className="App">
-            <div className="logo-container">
-                <img src={logo} alt="logo" />
-            </div>
-            {/*<Search/>*/}
-            {isLoading ? (
-                <LoadingSpinner />
-            ) : (
-                <div>
-                    <ShoppingList shipmentsData={shipmentsData}/>
+        <BrowserRouter>
+            <div className="App">
+                <div className="logo-container">
+                    <img src={logo} alt="logo" />
                 </div>
-            )}
-        </div>
+                {isLoading ? (
+                    <LoadingSpinner />
+                ) : (
+                    <div>
+                        <ShoppingList shipmentsData={shipmentsData}/>
+                    </div>
+                )}
+            </div>
+        </BrowserRouter>
     );
 }
 
