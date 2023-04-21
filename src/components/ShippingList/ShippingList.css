@@ -28,6 +28,18 @@
     border: 1px solid;
 }
 
+@media (max-width: 900px) {
+    .shipping-list-search input {
+        position: absolute;
+        top: 5%;
+        right: 20%;
+        left: 30%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid;
+    }
+}
+
 li, p {
     color: #979797;
     font-family: Lato, regular, serif;
@@ -38,4 +50,5 @@ h3 {
     color: #979797;
     line-height: 38px;
 }
+
 
