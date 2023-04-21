@@ -24,7 +24,7 @@ function App() {
     console.log(shipmentsData)
     return (
         <div className="App">
-            <Search/>
+            {/*<Search/>*/}
             {isLoading ? (
                 <LoadingSpinner />
             ) : (

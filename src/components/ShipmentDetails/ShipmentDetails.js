@@ -46,8 +46,9 @@ function ShipmentDetails({ selectedShipment }) {
                 <p style={{marginBottom: '35px'}}>{selectedShipment.email}</p>
                 <p>CARGO BOXES</p>
                 <input type="text" value={boxes} onChange={handleBoxUnitsChange}/>
-                <p style={{fontSize: '32px'}}>Number of reuired cargo bays:</p>
-                <p style={{color: '#fff', fontSize: '32px' }}>{calculation(boxes)}</p>
+                <p style={{fontSize: '32px'}}>Number of reuired cargo bays: <br/>
+                    <span style={{color: '#fff'}}>{calculation(boxes)}</span>
+                </p>
             </div>
         </div>
     );
