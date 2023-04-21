@@ -7,9 +7,19 @@ function ShippingList({shipmentsData}) {
 
     const [search, setSearch] = useState('');
 
-    const filteredShipments = shipmentsData.filter((shipment) => {
-        return (shipment.name).toLowerCase().includes(search.toLowerCase());
-    });
+    // const filteredShipments = shipmentsData.filter((shipment) => {
+    //     return (shipment.name).toLowerCase().includes(search.toLowerCase());
+    // });
+
+    const filteredShipments = () => {
+        return shipmentsData.filter(shipment => {
+            return (
+                <p key={shipment.id} onClick={() => setSelectedShipment(shipment)}>
+                    {shipment.name.includes(search) && shipment.name}
+                </p>
+            )
+        })
+    }
 
 
     return (
@@ -19,11 +29,12 @@ function ShippingList({shipmentsData}) {
             </div>
             <div className="shipping-list">
                 <h3>Shipping List</h3>
-                {filteredShipments.map((shipment) => (
-                    <ul key={shipment.id}>
-                        <li onClick={() => setSelectedShipment(shipment)}> {shipment.name} </li>
-                    </ul>
-                ))}
+                {filteredShipments()}
+                {/*{filteredShipments.map((shipment) => (*/}
+                {/*    <ul key={shipment.id}>*/}
+                {/*        <li onClick={() => setSelectedShipment(shipment)}> {shipment.name} </li>*/}
+                {/*    </ul>*/}
+                {/*))}*/}
             </div>
             {selectedShipment &&
                 <ShipmentDetails selectedShipment={selectedShipment}/>
