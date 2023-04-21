@@ -7,19 +7,17 @@ function ShippingList({shipmentsData}) {
 
     const [search, setSearch] = useState('');
 
-    // const filteredShipments = shipmentsData.filter((shipment) => {
-    //     return (shipment.name).toLowerCase().includes(search.toLowerCase());
-    // });
+    const filteredShipments = shipmentsData.filter((shipment) => {
+        return (shipment.name).toLowerCase().includes(search.toLowerCase());
+    });
 
-    const filteredShipments = () => {
-        return shipmentsData.filter(shipment => {
-            return (
-                <p key={shipment.id} onClick={() => setSelectedShipment(shipment)}>
-                    {shipment.name.includes(search) && shipment.name}
+    const shippingList = filteredShipments.map(shipment => (
+                <p key={shipment.id}
+                   onClick={() => setSelectedShipment(shipment)}
+                   tabIndex={0}> {/*Allows to change background color with focus pseudo-element*/}
+                    {(shipment.name.toLowerCase()).includes(search.toLowerCase()) && shipment.name}
                 </p>
-            )
-        })
-    }
+        ))
 
 
     return (
@@ -29,16 +27,10 @@ function ShippingList({shipmentsData}) {
             </div>
             <div className="shipping-list">
                 <h3>Shipping List</h3>
-                {filteredShipments()}
-                {/*{filteredShipments.map((shipment) => (*/}
-                {/*    <ul key={shipment.id}>*/}
-                {/*        <li onClick={() => setSelectedShipment(shipment)}> {shipment.name} </li>*/}
-                {/*    </ul>*/}
-                {/*))}*/}
+                {shippingList}
             </div>
             {selectedShipment &&
                 <ShipmentDetails selectedShipment={selectedShipment}/>
-
             }
         </div>
     );
